@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5313040877973439151}
   m_Layer: 0
   m_Name: cano
-  m_TagString: enemy
+  m_TagString: Parede
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedHorizontal: 3
   destroyOffset: 1
-  minXPosition: -3.5
-  maxXPosition: 3.5
-  minHeight: 5
-  maxHeight: 11
+  minXPosition: -4.364
+  maxXPosition: 4.364
+  minHeight: 2
+  maxHeight: 5

@@ -17,7 +17,6 @@ public class ParedeController : MonoBehaviour
         float height = Random.Range(minHeight, maxHeight);
         
         float randomX = Random.Range(minXPosition, maxXPosition);
-        transform.position = new Vector2(randomX, transform.position.y);
         
         transform.localScale = new Vector3(1f, height, 1f);
     }
