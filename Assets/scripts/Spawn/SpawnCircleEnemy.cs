@@ -6,11 +6,10 @@ public class SpawnCircleEnemy : MonoBehaviour
 {
     public GameObject enemyPrefab;
     private Score score;
-    public float spawnIntervalMin = 2f;
-    public float spawnIntervalMax = 5f;
+    public float spawnIntervalMin = 4f;
+    public float spawnIntervalMax = 12f;
     public float spawnYMin = -3.2f;
     public float spawnYMax = 3.2f;
-
     void Start()
     {
         
@@ -22,7 +21,7 @@ public class SpawnCircleEnemy : MonoBehaviour
     void TrySpawnEnemy()
     {
         
-        if (score.GetScore() >= 100)
+        if (score.GetScore() >= 300)
         {
             SpawnEnemy();
         }

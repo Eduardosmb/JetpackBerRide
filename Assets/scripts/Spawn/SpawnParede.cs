@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpawnParede : MonoBehaviour
 {
     public GameObject paredePrefab; 
-    public float spawnIntervalMin = 4f; 
-    public float spawnIntervalMax = 12f;
+    public float spawnIntervalMin = 1f; 
+    public float spawnIntervalMax = 5f;
 
     void Start()
     {

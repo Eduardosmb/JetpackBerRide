@@ -9,6 +9,11 @@ public class Score : MonoBehaviour
     private float scoreTimer = 1.0f; 
     private int score = 0;
 
+    private float speed = 2f;
+
+    private bool velocidadeAumentada = false;
+
+
     void Start()
     {
         SetScoreText();
@@ -16,6 +21,16 @@ public class Score : MonoBehaviour
 
     void Update()
     {
+
+        if (score % 200 == 0 && !velocidadeAumentada)
+        {
+            speed++;
+            velocidadeAumentada = true;
+        }
+        else if (score % 200 != 0)
+        {
+            velocidadeAumentada = false; 
+        }
         
         scoreTimer -= Time.deltaTime;
 
@@ -39,6 +54,11 @@ public class Score : MonoBehaviour
         {
             Debug.LogError("scoreText não está atribuído no Inspector");
         }
+    }
+
+
+    public float GetSpeed(){
+        return speed;
     }
 
     public int GetScore()

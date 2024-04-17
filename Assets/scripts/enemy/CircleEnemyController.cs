@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CircleEnemyController : MonoBehaviour
 {
-    public float moveSpeedHorizontal = 3f;
+    public float moveSpeedHorizontal;
     public float circleRadius = 2f; 
     public float angularSpeed = 2f; 
     public float destroyOffset = 1f;
@@ -12,15 +12,18 @@ public class CircleEnemyController : MonoBehaviour
     private float angle = 0f;
     private Vector3 centerPosition;
 
+    private Score score;
+
     void Start()
     {
-        
+        score = FindObjectOfType<Score>();
         centerPosition = transform.position;
     }
 
     void Update()
     {
-        
+        moveSpeedHorizontal = score.GetSpeed(); 
+
         centerPosition += Vector3.left * moveSpeedHorizontal * Time.deltaTime;
 
         
