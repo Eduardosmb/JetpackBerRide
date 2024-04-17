@@ -33,12 +33,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if(!isInvincible){
             if(other.gameObject.CompareTag("enemy")){
-                Debug.Log("ergi gay da o butico na esquina da casa do ator depois de perder no poker");
                 life -= 1;
                 isInvincible = true;
             }
             if(other.gameObject.CompareTag("Parede")){
-                Debug.Log("tomo troxa");
                 life -= 1;
                 isInvincible = true;
 
