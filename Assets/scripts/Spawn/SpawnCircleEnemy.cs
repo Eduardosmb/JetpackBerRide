@@ -13,15 +13,15 @@ public class SpawnCircleEnemy : MonoBehaviour
 
     void Start()
     {
-        // Encontre a referência ao Score uma única vez no início
+        
         score = FindObjectOfType<Score>();
-        // Começa a tentar spawnar os inimigos
+        
         InvokeRepeating("TrySpawnEnemy", spawnIntervalMin, spawnIntervalMax - spawnIntervalMin);
     }
 
     void TrySpawnEnemy()
     {
-        // Verifica se o score é suficiente
+        
         if (score.GetScore() >= 100)
         {
             SpawnEnemy();

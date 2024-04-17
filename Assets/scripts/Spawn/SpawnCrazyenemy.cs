@@ -14,15 +14,15 @@ public class SpawnCrazyenemy : MonoBehaviour
 
     void Start()
     {
-        // Encontra a referência ao Score uma única vez no início
+        
         score = FindObjectOfType<Score>();
-        // Começa a tentar spawnar os inimigos
+        
         InvokeRepeating("TrySpawnEnemy", spawnIntervalMin, spawnIntervalMax);
     }
 
     void TrySpawnEnemy()
     {
-        // Verifica se o score é suficiente
+        
         if (score != null && score.GetScore() >= 200)
         {
             SpawnEnemy();
