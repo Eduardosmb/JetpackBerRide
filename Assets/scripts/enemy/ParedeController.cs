@@ -8,8 +8,8 @@ public class ParedeController : MonoBehaviour
     public float destroyOffset = 1f; 
     public float minXPosition = -3.5f; 
     public float maxXPosition = 3.5f; 
-    public float minHeight = 5f; 
-    public float maxHeight = 14f; 
+    public float minHeight = 3f; 
+    public float maxHeight = 7f; 
 
     private Score score;
 

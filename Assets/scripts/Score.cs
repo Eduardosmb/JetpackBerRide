@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     void Update()
     {
 
-        if (score % 200 == 0 && !velocidadeAumentada)
+        if (score % 350 == 0 && !velocidadeAumentada)
         {
             speed++;
             velocidadeAumentada = true;
@@ -37,7 +37,7 @@ public class Score : MonoBehaviour
         
         if (scoreTimer <= 0)
         {
-            score += 20; 
+            score += 10; 
             SetScoreText(); 
             scoreTimer = 1.0f; 
         }

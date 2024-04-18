@@ -21,7 +21,7 @@ public class SpawnCircleEnemy : MonoBehaviour
     void TrySpawnEnemy()
     {
         
-        if (score.GetScore() >= 300)
+        if (score.GetScore() >= 1500)
         {
             SpawnEnemy();
         }

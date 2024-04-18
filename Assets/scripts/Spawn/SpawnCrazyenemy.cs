@@ -23,7 +23,7 @@ public class SpawnCrazyenemy : MonoBehaviour
     void TrySpawnEnemy()
     {
         
-        if (score != null && score.GetScore() >= 200)
+        if (score != null && score.GetScore() >= 1000)
         {
             SpawnEnemy();
         }

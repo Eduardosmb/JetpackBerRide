@@ -5,45 +5,54 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
+    public int life = 3;  // Quantidade de vidas do jogador
+    public AudioSource audioSource;  // Componente AudioSource para tocar os sons
+    public AudioClip loseLifeSound;  // AudioClip que será tocado ao perder uma vida
 
-    public int life = 3;
+    private float cooldown = 0f;  // Cooldown para invencibilidade temporária
+    private bool isInvincible = false;  // Flag para controle de invencibilidade
 
-    private float cooldown = 0f;
+    void Start() {
+        // Garantir que o AudioSource está configurado
+        if (audioSource == null) {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
 
-    private bool isInvincible = false;
-
-
-    void Update()
-    {
-        if (life <= 0){
+    void Update() {
+        // Verifica se o jogador está sem vidas e carrega a cena de Game Over
+        if (life <= 0) {
             SceneManager.LoadScene("GameOver");
         }
-        if(isInvincible){
+
+        // Controle de cooldown para invencibilidade
+        if (isInvincible) {
             cooldown += Time.deltaTime;
-            if(cooldown >= 2f){
+            if (cooldown >= 1f) {
                 isInvincible = false;
                 cooldown = 0f;
             }
         }
-
-
     }
 
-     private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(!isInvincible){
-            if(other.gameObject.CompareTag("enemy")){
-                life -= 1;
-                isInvincible = true;
-            }
-            if(other.gameObject.CompareTag("Parede")){
-                life -= 1;
-                isInvincible = true;
-
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (!isInvincible) {
+            if (other.gameObject.CompareTag("enemy") || other.gameObject.CompareTag("Parede")) {
+                life -= 1;  // Decrementa uma vida
+                isInvincible = true;  // Torna o jogador invencível temporariamente
+                PlayLoseLifeSound();  // Toca o som de perda de vida
             }
         }
-        
     }
 
-    
+    // Método para tocar o som de perda de vida
+    private void PlayLoseLifeSound() {
+        if (audioSource != null && loseLifeSound != null) {
+            audioSource.PlayOneShot(loseLifeSound);
+        }
+    }
+
+    public int GetLife() {
+        return life;
+    }
 }

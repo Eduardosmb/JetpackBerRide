@@ -23,7 +23,7 @@ public class SpawnInimigo : MonoBehaviour
     void TrySpawnEnemy()
     {
         
-        if (score != null && score.GetScore() >= 300)
+        if (score != null && score.GetScore() >= 500)
         {
             SpawnEnemy();
         }
