@@ -13,7 +13,7 @@ LINK DO GDD GRUPO JETPACKBERRIDE: https://drive.google.com/drive/folders/1J_PW8V
 
 Link do Github: https://github.com/Eduardosmb/JetpackBerRide
 
-Link ItchIo: https://itch.io/jam/projeto-2d-insper-20241-bcc
+Link ItchIo: https://itch.io/jam/projeto-2d-insper-20241-bcc](https://itch.io/jam/projeto-2d-insper-20241-bcc/rate/2653781
 
 ```
 
