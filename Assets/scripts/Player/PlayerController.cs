@@ -9,17 +9,17 @@ public class PlayerController : MonoBehaviour
     public float maxXPosition = 8f;
     public float gravityScale = 1f;
     
-    public float moveSpeed = 2f; // Velocidade horizontal do personagem
+    public float moveSpeed = 2f; 
 
     private Rigidbody2D rb;
     private Animator animator;
     
-    private bool isFlying; // Se o personagem está voando ou não
+    private bool isFlying; 
 
-    public float runningSpeed = 4f; // Velocidade de corrida do personagem
-    private float defaultSpeed; // Velocidade padrão de caminhada
+    public float runningSpeed = 4f; 
+    private float defaultSpeed; 
 
-    private bool isRunning; // Se o personagem está correndo ou não
+    private bool isRunning; 
 
     
 
@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = gravityScale;
         animator = GetComponent<Animator>();
-        defaultSpeed = moveSpeed; // Armazena a velocidade inicial como a padrão de caminhada
+        defaultSpeed = moveSpeed; 
     }
 
     void Update()
@@ -37,24 +37,24 @@ public class PlayerController : MonoBehaviour
       
 
         
-        // Mover horizontalmente com base na entrada do usuário
+        
         float horizontalInput = Input.GetAxis("Horizontal");
         
-        // Verificar se o jogador quer correr e está no chão
         
-        Debug.Log("IsRunning: " + isRunning); // Imprime o estado de corrida para depuração
         
-        // Ajustar a velocidade de movimento dependendo se está correndo ou não
+        Debug.Log("IsRunning: " + isRunning); 
+        
+        
         moveSpeed = isRunning ? runningSpeed : defaultSpeed;
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
         
-        // Atualizar os parâmetros do Animator
+        
        
 
         animator.SetBool("IsRunning", isRunning);
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
         
-        // Aplicar a força para cima se estiver voando
+        
         isFlying = Input.GetKey(KeyCode.UpArrow);
         animator.SetBool("IsFlying", isFlying);
         if (isFlying)
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, upwardForce);
         }
 
-        // Restrições para não ultrapassar os limites verticais do jogo
+        
         ClampYPosition();
     }
 
@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // Visualizar a área de verificação do chão
+        
         Gizmos.color = Color.red;
     }
 
